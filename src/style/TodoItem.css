@@ -1,0 +1,13 @@
+.box{
+    color :brown;
+    max-width: 100%;
+    font-size: 40 px;
+   display: flex;
+   justify-content: space-around;
+    
+}
+
+.delete{
+    float: right;
+   font-size: 30px;
+}
