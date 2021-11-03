@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 // import api from "../apis/api";
 import { createTodo } from "../apis/todos";
-
+import { Button } from "antd";
+import 'antd/dist/antd.css';
 const TodoGenerator = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const TodoGenerator = () => {
         onChange={(event) => setText(event.target.value)}
         defaultValue={text}
       />
-      <button onClick={updateTodoList}>add</button>
+      <Button type="primary" onClick={updateTodoList}>add</Button>
     </div>
   );
 };
