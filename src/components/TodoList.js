@@ -11,6 +11,7 @@ const TodoList = () => {
   useEffect(() => {
     getAllTodos().then((response) => dispatch(initTodoList(response)));
   });
+  
 
   return (
     <div className="todo">
