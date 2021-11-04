@@ -5,27 +5,35 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllTodos } from "../apis/todos";
 import { initTodoList } from "../store/actions/TodoAction";
-
+import { Layout, Menu, Breadcrumb } from "antd";
+import { Pagination } from 'antd';
+import { useSelector } from "react-redux";
+const { Header, Content, Footer } = Layout;
 const TodoList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     getAllTodos().then((response) => dispatch(initTodoList(response)));
   });
-  
+  const todos = useSelector((state) => state.todoList);
 
   return (
-    <div className="todo">
-      <div className="todoBox">
-        <div>
-          <p>
-            Todo List <TodoGenerator />
-          </p>
+    <>
+      <Content style={{ padding: "0 50px" }}>
+        <div className="site-layout-content">
+          {" "}
+          <div>
+            <p>
+              Todo List <TodoGenerator />
+            </p>
+          </div>
+          <div>
+            <TodoGroup />
+          </div>
         </div>
-        <div>
-          <TodoGroup />
-        </div>
-      </div>
-    </div>
+      </Content>
+
+      
+    </>
   );
 };
 

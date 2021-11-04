@@ -7,6 +7,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HelpPage from "./components/HelpPage";
 import DonePage from "./components/DonePage";
 import NotFoundPage from "./components/exception/NotFoundPage.js";
+import { Layout, Menu, Breadcrumb } from 'antd';
+import {
+  HomeOutlined,
+  CheckOutlined,
+  QuestionOutlined,
+} from '@ant-design/icons';
+
+
+const { Header, Content, Footer } = Layout;
 
 function App() {
   const store = createStore(
@@ -17,28 +26,52 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Router>
-          <div>
-            <nav className="navBar">
-              <Link className="navItem" to="/">
+        <Header className='topBar'>
+      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} >
+
+         <Menu.Item key={'home'}> 
+              <Link to="/">
                 Home
               </Link>
-              <span />
-
-              <Link className="navItem" to="/done">
+          </Menu.Item>
+          <Menu.Item key={'done'}> 
+          <Link to="/done">
                 Done
               </Link>
-
-              <Link className="navItem" to="/help">
+          </Menu.Item>
+          <Menu.Item key={'help'}> 
+          <Link  to="/help">
                 Help
               </Link>
-            </nav>
+          </Menu.Item>
+      </Menu>
+    </Header>
+    <div className='bottom'>      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+
+<Menu.Item key={'home'}> 
+     <Link to="/">
+     <HomeOutlined />
+     </Link>
+ </Menu.Item>
+ <Menu.Item key={'done'}> 
+ <Link to="/done">
+ <CheckOutlined />
+     </Link>
+ </Menu.Item>
+ <Menu.Item key={'help'}> 
+ <Link  to="/help">
+ <QuestionOutlined />
+     </Link>
+ </Menu.Item>
+</Menu></div>
+
             <Switch>
               <Route exact path="/" component={TodoList} />
               <Route exact path="/done" component={DonePage} />
               <Route exact path="/help" component={HelpPage} />
               <Route exact path="*" component={NotFoundPage} />
             </Switch>
-          </div>
+
         </Router>
       </Provider>
     </div>

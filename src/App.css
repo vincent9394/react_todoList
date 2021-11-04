@@ -48,3 +48,24 @@
     transform: rotate(360deg);
   }
 }
+
+.bottom {
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.bottom > ul {
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .topBar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bottom {
+    display: none;
+  }
+}
