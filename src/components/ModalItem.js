@@ -4,11 +4,13 @@ import { FormOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import { useDispatch } from "react-redux";
 import api from "../apis/api.js";
+// import { updateTodo } from "../apis/todos.js";
+// import { updateTodoList } from "../store/actions/TodoAction.js";
 
 const ModalItem = ({ todo }) => {
   const dispatch = useDispatch();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [text, setText] = useState("");
+  const [text, setText] = useState(todo.text);
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -26,6 +28,12 @@ const ModalItem = ({ todo }) => {
       .then((response) =>
         dispatch({ type: "updateTodo", payload: response.data })
       );
+
+
+    // updateTodo({ updated}).then((response) =>
+    //   dispatch(updateTodoList(response))
+    // ); 
+
 
     setIsModalVisible(false);
   };
