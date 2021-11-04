@@ -1,4 +1,4 @@
-import { ActionTypes } from "../../reducers/Constants";
+import { ActionTypes } from "../reducers/Constants";
 
 export const initTodoList = (response) => ({
   type: ActionTypes.INIT_TODOLIST,

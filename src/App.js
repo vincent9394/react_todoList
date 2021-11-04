@@ -2,7 +2,7 @@ import "./App.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import TodoList from "./components/TodoList";
-import todoReducer from "./reducers/TodoReducer";
+import todoReducer from "./store/reducers/TodoReducer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HelpPage from "./components/HelpPage";
 import DonePage from "./components/DonePage";
