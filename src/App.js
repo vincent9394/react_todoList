@@ -6,7 +6,7 @@ import todoReducer from "./reducers/TodoReducer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HelpPage from "./components/HelpPage";
 import DonePage from "./components/DonePage";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./components/exception/NotFoundPage.js";
 
 function App() {
   const store = createStore(
@@ -18,7 +18,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <div>
-            <nav>
+            <nav className="navBar">
               <Link className="navItem" to="/">
                 Home
               </Link>

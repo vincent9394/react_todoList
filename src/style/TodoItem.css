@@ -2,10 +2,12 @@
   color: brown;
   max-width: 100%;
   font-size: 40 px;
-  display: flex;
-  justify-content: space-around;
+
+  margin: 20px;
+  border: 2px solid rgb(233, 232, 232);
 }
 
-.tool{
+.tool {
   font-size: 30px;
+  float: right;
 }

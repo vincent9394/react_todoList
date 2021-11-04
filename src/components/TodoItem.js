@@ -1,9 +1,9 @@
 import "../style/TodoItem.css";
 import { useDispatch } from "react-redux";
-
 import { deleteTodo, updateTodo } from "../apis/todos";
 import { CloseOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
+import { updateTodoList, deleteTodoList } from "../store/actions/TodoAction";
 import ModalItem from "./ModalItem";
 
 const TodoItem = ({ todo }) => {
@@ -12,24 +12,20 @@ const TodoItem = ({ todo }) => {
 
   const updateStatus = () => {
     updateTodo({ id: todo.id, done: !todo.done }).then((response) =>
-      dispatch({ type: "todo/updateStatus", payload: response.data })
+      dispatch(updateTodoList(response))
     );
   };
 
   const deleteItem = () => {
-    deleteTodo(todo.id).then((response) =>
-      dispatch({ type: "todo/delete", payload: todo.id })
-    );
+    deleteTodo(todo.id).then(() => dispatch(deleteTodoList(todo.id)));
   };
 
   return (
     <div className="box">
       <span onClick={updateStatus}> {newText} </span>
 
-      <div>
-        <CloseOutlined fill="blue" onClick={deleteItem} className="tool" />
-        <ModalItem />
-      </div>
+      <CloseOutlined fill="blue" onClick={deleteItem} className="tool" />
+      <ModalItem todo={todo} />
     </div>
   );
 };
