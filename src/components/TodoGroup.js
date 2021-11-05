@@ -7,7 +7,7 @@ import { Pagination } from "antd";
 
 const TodoGroup = () => {
   const todos = useSelector((state) => {
-    return state.todoList
+    return state.todoList;
   });
   const dispatch = useDispatch();
 
@@ -15,8 +15,8 @@ const TodoGroup = () => {
     <>
       <div>
         {todos?.content?.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
-          ))}
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
       </div>
       <Pagination
         defaultCurrent={1}
@@ -24,7 +24,9 @@ const TodoGroup = () => {
         pageSizeOptions="1"
         showLessItems
         onChange={(value) => {
-          getPage(value -1, 5).then((response) => dispatch(initTodoList(response)));
+          getPage(value - 1, 5).then((response) =>
+            dispatch(initTodoList(response))
+          );
           console.log(value);
         }}
       />

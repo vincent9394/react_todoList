@@ -6,16 +6,13 @@ import { useDispatch } from "react-redux";
 import { getPage } from "../apis/todos";
 import { initTodoList } from "../store/actions/TodoAction";
 import { Layout } from "antd";
-// import { Pagination } from 'antd';
-// import { useSelector } from "react-redux";
 
-const {  Content} = Layout;
+const { Content } = Layout;
 const TodoList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     getPage(0, 5).then((response) => dispatch(initTodoList(response)));
   });
-  // const todos = useSelector((state) => state.todoList);
 
   return (
     <>
@@ -32,8 +29,6 @@ const TodoList = () => {
           </div>
         </div>
       </Content>
-
-      
     </>
   );
 };

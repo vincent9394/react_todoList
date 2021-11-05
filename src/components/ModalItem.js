@@ -23,17 +23,14 @@ const ModalItem = ({ todo }) => {
   const updateStatus = () => {
     const updated = { ...todo, text: text };
 
-    updateTodo( updated).then((response) =>
-      dispatch(updateTodoList(response))
-    ); 
-
+    updateTodo(updated).then((response) => dispatch(updateTodoList(response)));
 
     setIsModalVisible(false);
   };
 
   return (
     <>
-      <FormOutlined onClick={showModal} className ="tool"  />
+      <FormOutlined onClick={showModal} className="tool" />
       <Modal
         title="Edit Todo"
         visible={isModalVisible}
