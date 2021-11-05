@@ -12,15 +12,13 @@
   float: right;
 }
 
-.TodoItem-todo.false{
+.TodoItem-todo.false {
   color: darkslategrey;
   text-decoration: line-through;
   /* display: none; */
 }
 
-
-
-.TodoItem-todo.true{
+.TodoItem-todo.true {
   color: darkslategrey;
   text-decoration: line-through;
   display: inline;
