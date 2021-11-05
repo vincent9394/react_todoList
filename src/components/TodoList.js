@@ -5,16 +5,17 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllTodos } from "../apis/todos";
 import { initTodoList } from "../store/actions/TodoAction";
-import { Layout, Menu, Breadcrumb } from "antd";
-import { Pagination } from 'antd';
-import { useSelector } from "react-redux";
-const { Header, Content, Footer } = Layout;
+import { Layout } from "antd";
+// import { Pagination } from 'antd';
+// import { useSelector } from "react-redux";
+
+const {  Content} = Layout;
 const TodoList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     getAllTodos().then((response) => dispatch(initTodoList(response)));
   });
-  const todos = useSelector((state) => state.todoList);
+  // const todos = useSelector((state) => state.todoList);
 
   return (
     <>

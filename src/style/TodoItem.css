@@ -11,3 +11,17 @@
   font-size: 20px;
   float: right;
 }
+
+.TodoItem-todo.false{
+  color: darkslategrey;
+  text-decoration: line-through;
+  /* display: none; */
+}
+
+
+
+.TodoItem-todo.true{
+  color: darkslategrey;
+  text-decoration: line-through;
+  display: inline;
+}

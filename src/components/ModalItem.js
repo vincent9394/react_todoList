@@ -33,7 +33,7 @@ const ModalItem = ({ todo }) => {
 
   return (
     <>
-      <FormOutlined className="tool" onClick={showModal} />
+      <FormOutlined onClick={showModal} className ="tool"  />
       <Modal
         title="Edit Todo"
         visible={isModalVisible}
