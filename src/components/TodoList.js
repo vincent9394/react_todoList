@@ -3,7 +3,7 @@ import "../style/TodoList.css";
 import TodoGenerator from "./TodoGenerator";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getAllTodos } from "../apis/todos";
+import { getPage } from "../apis/todos";
 import { initTodoList } from "../store/actions/TodoAction";
 import { Layout } from "antd";
 // import { Pagination } from 'antd';
@@ -13,7 +13,7 @@ const {  Content} = Layout;
 const TodoList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    getAllTodos().then((response) => dispatch(initTodoList(response)));
+    getPage(0, 5).then((response) => dispatch(initTodoList(response)));
   });
   // const todos = useSelector((state) => state.todoList);
 
